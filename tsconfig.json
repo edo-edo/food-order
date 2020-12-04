@@ -1,12 +1,18 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "jsx": "react",
-        "watch": true,
-        "target": "es5",
-        "lib": ["es6", "dom"]
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "src",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "module": "commonjs",
+    "target": "es6",
+    "jsx": "react",
+    "strict": true, 
+    "moduleResolution": "node",
+    "esModuleInterop": true
     },
-  "include": [
-    "./src/**/*"
-  ]
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules"]
 }
