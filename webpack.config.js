@@ -11,7 +11,7 @@ module.exports = {
     liveReload: false,
     historyApiFallback: true,
   },
-  entry: path.join(__dirname, '/src/index.tsx'),
+  entry: path.resolve(__dirname, '/src/index.tsx'),
 
     devtool: "inline-source-map",
     output: {
@@ -47,6 +47,17 @@ module.exports = {
             ]
             
           },
+          {
+            test: /\.(jpg|gif|png)$/,
+            use: [
+              {
+                loader: "file-loader",
+                options: {
+                    name: "images/[name]-[hash:8].[ext]"
+                  }
+              }
+            ]
+          }
         ]
     },
     resolve: {
