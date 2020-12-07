@@ -7,6 +7,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": ["node_modules/@types", "src/custom-types"],
     "target": "es6",
     "jsx": "react",
     "strict": true, 
