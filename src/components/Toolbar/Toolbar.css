@@ -1,0 +1,58 @@
+.Toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background-color: #521751;
+}
+
+.Toolbar__navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.Toolbar__logo {
+  margin-left: 1rem;
+}
+
+.Toolbar__logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.Toolbar__navigation__items ul {
+  list-style: none;
+  display: flex;
+}
+
+.Toolbar__navigation__items li {
+  padding: 0 0.5rem;
+}
+
+.Toolbar__navigation__items a {
+  color: white;
+  text-decoration: none;
+}
+.Toolbar__navigation__items a:hover,
+.Toolbar__navigation__items a:active {
+  color: #f2923f
+}
+
+@media (max-width: 768px) {
+  .Toolbar__navigation__items {
+    display: none;
+  }
+}
+@media (min-width: 769px) {
+  .Toolbar__toggle__button {
+    display: none;
+  }
+
+  .Toolbar__logo {
+    margin-left: 0;
+  }
+}
