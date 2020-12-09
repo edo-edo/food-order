@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 
 import classes from './SideDrawer.css';
 
@@ -18,10 +19,10 @@ const SideDrawer:React.FC<Props> = ({ show }) => {
     <nav className={sideDrawerStyle}>
       <ul>
         <li>
-          <a href="/">Menu</a>
+          <Link to="/">Menu</Link>
         </li>
         <li>
-          <a href="/">Contact</a>
+          <Link to="/contact"> Contact</Link>
         </li>
       </ul>
     </nav>

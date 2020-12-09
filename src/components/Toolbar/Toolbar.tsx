@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton/DrawerToggleButton';
 import classes from './Toolbar.css';
@@ -15,15 +16,15 @@ const Toolbar:React.FC<Props> = ({ drawerClickHandler }) => (
         <DrawerToggleButton onClick={drawerClickHandler} />
       </div>
       <div className={classes.Toolbar__logo}>
-        <a href="/">Logo</a>
+        <Link to="/">Logo</Link>
       </div>
       <div className={classes.Toolbar__navigation__items}>
         <ul>
           <li>
-            <a href="/">Menu</a>
+            <Link to="/">Menu</Link>
           </li>
           <li>
-            <a href="/">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
