@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton/DrawerToggleButton';
+import ToolbarContent from '../ToolbarContent/ToolbarContent';
 import classes from './Toolbar.css';
 
 interface Props {
@@ -18,16 +19,7 @@ const Toolbar:React.FC<Props> = ({ drawerClickHandler }) => (
       <div className={classes.Toolbar__logo}>
         <Link to="/">Logo</Link>
       </div>
-      <div className={classes.Toolbar__navigation__items}>
-        <ul>
-          <li>
-            <Link to="/">Menu</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-        </ul>
-      </div>
+      <ToolbarContent className={classes.Toolbar__navigation__items} />
     </nav>
   </header>
 );

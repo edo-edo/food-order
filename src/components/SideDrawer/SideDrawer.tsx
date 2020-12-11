@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 
+import ToolbarContent from '../ToolbarContent/ToolbarContent';
 import classes from './SideDrawer.css';
 
 interface Props{
@@ -16,16 +16,7 @@ const SideDrawer:React.FC<Props> = ({ show }) => {
   });
 
   return (
-    <nav className={sideDrawerStyle}>
-      <ul>
-        <li>
-          <Link to="/">Menu</Link>
-        </li>
-        <li>
-          <Link to="/contact"> Contact</Link>
-        </li>
-      </ul>
-    </nav>
+    <ToolbarContent className={sideDrawerStyle} />
   );
 };
 
