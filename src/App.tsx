@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Toolbar from './components/Toolbar/Toolbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Backdrop from './components/Backdrop/Backdrop';
+import Foods from './container/Foods';
 import classes from './App.css';
 
 const App: React.FC = () => {
@@ -24,7 +25,7 @@ const App: React.FC = () => {
         </>
       ) }
       <main>
-        <p>main app</p>
+        <Foods />
       </main>
     </div>
   );

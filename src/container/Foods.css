@@ -1,0 +1,13 @@
+.Foods {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .Foods {
+        flex-direction: column;
+    }
+}
