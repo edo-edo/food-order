@@ -13,13 +13,13 @@ interface Props {
 
 const Food:React.FC<Props> = ({ title, price, image }) => (
   <div className={classes.Food}>
-    <img alt="phot" src={Image} />
+    <img alt={title} src={Image} />
     <div>
       <p>{title}</p>
     </div>
-    <div>
+    <div className={classes.Food_footer}>
       <p>
-        {price}
+        {`${price} $`}
       </p>
       <button type="button">order</button>
     </div>
