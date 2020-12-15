@@ -8,19 +8,34 @@ interface Props {
   key: number,
   title: string,
   price: string,
-  image: string
+  quantity: number,
+  image: string,
 }
 
-const Food:React.FC<Props> = ({ title, price, image }) => (
+const Food:React.FC<Props> = ({
+  title, price, quantity, image,
+}) => (
   <div className={classes.Food}>
     <img alt={title} src={Image} />
-    <div>
-      <p>{title}</p>
+    <div className={classes.Food__title}>
+      <p>
+        title:
+        {' '}
+        {title}
+      </p>
+      <div className={classes.Food__pieces}>
+        quantity:
+        {' '}
+        {quantity}
+      </div>
     </div>
     <div className={classes.Food_footer}>
-      <p>
-        {`${price} $`}
-      </p>
+      <div className={classes.food__dolar}>
+        <p>
+          {price}
+        </p>
+        $
+      </div>
       <button type="button">order</button>
     </div>
   </div>
@@ -29,6 +44,7 @@ const Food:React.FC<Props> = ({ title, price, image }) => (
 Food.propTypes = {
   title: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  quantity: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };
 
