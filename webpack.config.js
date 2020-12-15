@@ -13,77 +13,88 @@ module.exports = {
   },
   entry: path.resolve(__dirname, '/src/index.tsx'),
 
-    devtool: "inline-source-map",
-    output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, 'dist')
-    },
-    module: {
-        rules: [
+  devtool: "inline-source-map",
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, 'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: [
           {
-            test: /\.tsx?$/,
-            use: [
-              {
-                loader: 'babel-loader'
-              }
-            ]
-          },
-          {
-            enforce: 'pre',
-            test: /\.js$/,
-            use: [
-              {
-                loader: 'source-map-loader'
-              }
-            ]
-            
-          },
-          {
-            test: /\.css$/,
-            use: [
-              {
-                loader: "style-loader"
-              },
-              {
-                loader: "css-loader",
-                options: {
-                  importLoaders: 1,
-                  modules: true
-                }
-              }
-            ]
-          },
-          {
-            test: /\.scss$/,
-            use: [
-              {
-                loader: 'style-loader!css-loader!sass-loader',
-              }
-            ]
-            
-          },
-          {
-            test: /\.(jpg|gif|png)$/,
-            use: [
-              {
-                loader: "file-loader",
-                options: {
-                    name: "images/[name]-[hash:8].[ext]"
-                  }
-              }
-            ]
+            loader: 'babel-loader'
           }
         ]
-    },
-    resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src", "index.html"),
-        filename: 'index.html',
-        inject: true,
-      }),
-      new HotModuleReplacementPlugin()
-    ],
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'source-map-loader'
+          }
+        ]
+
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: true
+            }
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader!css-loader!sass-loader',
+          }
+        ]
+
+      },
+      {
+        test: /\.(jpg|gif|png)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "images/[name]-[hash:8].[ext]"
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+            }
+          }
+        ]
+      }
+    ]
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".jsx"]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "src", "index.html"),
+      filename: 'index.html',
+      inject: true,
+    }),
+    new HotModuleReplacementPlugin()
+  ],
 }
