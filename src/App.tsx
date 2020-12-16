@@ -7,7 +7,7 @@ import Foods from './container/Foods';
 import classes from './App.css';
 
 const App: React.FC = () => {
-  const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+  const [sideDrawerOpen, setSideDrawerOpen] = useState<boolean>(false);
 
   const drawerToggleClickHandler = () => {
     setSideDrawerOpen(true);
