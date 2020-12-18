@@ -16,7 +16,7 @@ const Food:React.FC<Props> = ({
   title, price, quantity, image,
 }) => (
   <div className={classes.Food}>
-    <img alt={title} src={Image} />
+    <img alt={title} src={image} />
     <div className={classes.Food__title}>
       <p>
         title:

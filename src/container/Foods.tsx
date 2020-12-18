@@ -9,21 +9,21 @@ const testArray = [
     title: 'xinkali',
     price: '14',
     quantity: 10,
-    image: '../../assets/images/xinkali.jpg',
+    image: 'public/images/xinkali.jpg',
   },
   {
     id: 2,
     title: 'hamburgeri',
     price: '23',
     quantity: 1,
-    image: '../../assets/images/hamburger.jpg',
+    image: 'public/images/hamburger.jpg',
   },
   {
     id: 3,
     title: 'kubdari',
     price: '18',
     quantity: 1,
-    image: '../../assets/images/kubdari.jpg',
+    image: 'public/images/kubdari.jpg',
   },
 ];
 
