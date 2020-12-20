@@ -8,13 +8,20 @@
     "noUnusedParameters": true,
     "module": "commonjs",
     "allowSyntheticDefaultImports": true,
-    "typeRoots": ["node_modules/@types", "src/custom-types"],
-    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/custom-types"
+    ],
+    "target": "es5",
     "jsx": "react",
-    "strict": true, 
+    "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true
-    },
-    "include": ["./src/**/*"],
-    "exclude": ["node_modules"]
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
