@@ -6,7 +6,7 @@ import classes from './Food.css';
 interface Props {
   key: number,
   title: string,
-  price: string,
+  price: number,
   quantity: number,
   image: string,
 }
@@ -42,7 +42,7 @@ const Food:React.FC<Props> = ({
 
 Food.propTypes = {
   title: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   quantity: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
 };

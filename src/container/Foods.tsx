@@ -1,31 +1,40 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { AnyAction, Dispatch } from 'redux';
+import useDispatch, { ThunkDispatch } from 'redux-thunk';
 
+import { RootStore } from '../store/Store';
 import GetFoods from '../actions/FoodActions';
 import Food from './Food/Food';
 import classes from './Foods.css';
 
-interface Props {
-  foods: {
-    id: number,
-    title: string,
-    price: string,
-    quantity: number,
-    image: string, }[],
+type IFood = {
+  id: number,
+  title: string,
+  price: number,
+  quantity: number,
+  image: string,
+};
+
+interface Action {
+  type: string,
+  payload: IFood[]
 }
 
-const Foods:React.FC<Props> = ({ foods, fetchTasks }) => {
+interface Props {
+  foods: IFood[]
+  fetchFoods: () => void
+}
+
+const Foods:React.FC<Props> = ({ foods, fetchFoods }: Props) => {
   useEffect(() => {
-    fetchTasks();
-  }, [fetchTasks]);
-  console.log(foods, typeof (foods));
+    fetchFoods();
+  }, [fetchFoods]);
 
   return (
     <div className={classes.Foods}>
-      <h1>hello</h1>
       {
-      foods.map((food) => (
+      foods.map((food: IFood) => (
         <Food
           key={food.id}
           title={food.title}
@@ -39,17 +48,12 @@ const Foods:React.FC<Props> = ({ foods, fetchTasks }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = ({ foods: state }: RootStore) => ({
   foods: state.foods,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchTasks: () => dispatch(GetFoods()),
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
+  fetchFoods: () => dispatch(GetFoods()),
 });
-
-Foods.propTypes = {
-  foods: PropTypes.arrayOf(PropTypes.object).isRequired,
-  fetchTasks: PropTypes.func.isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Foods);
