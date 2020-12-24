@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { AnyAction, Dispatch } from 'redux';
-import useDispatch, { ThunkDispatch } from 'redux-thunk';
+import { Dispatch, Action } from 'redux';
+import { ThunkDispatch } from 'redux-thunk';
 
 import { RootStore } from '../store/Store';
+import { DefaultState } from '../reducers/FoodReducer';
 import GetFoods from '../actions/FoodActions';
 import Food from './Food/Food';
 import classes from './Foods.css';
@@ -16,10 +17,7 @@ type IFood = {
   image: string,
 };
 
-interface Action {
-  type: string,
-  payload: IFood[]
-}
+type DispatchType = Dispatch<Action> & ThunkDispatch<DefaultState, unknown, Action>;
 
 interface Props {
   foods: IFood[]
@@ -52,7 +50,7 @@ const mapStateToProps = ({ foods: state }: RootStore) => ({
   foods: state.foods,
 });
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => ({
+const mapDispatchToProps = (dispatch: DispatchType) => ({
   fetchFoods: () => dispatch(GetFoods()),
 });
 

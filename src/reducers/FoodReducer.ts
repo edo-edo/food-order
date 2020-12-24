@@ -13,7 +13,7 @@ interface Action {
   payload: Food[]
 }
 
-interface DefaultState {
+export interface DefaultState {
   loading: boolean,
   foods: Food[]
 }

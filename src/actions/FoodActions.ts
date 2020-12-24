@@ -1,12 +1,14 @@
-import { AnyAction, Dispatch } from 'redux';
+import { Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
 import axios from 'axios';
-import * as actionTypes from './actionTypes';
 
-const GetFoods = ():ThunkAction<Promise<void>,
-string,
+import * as actionTypes from './actionTypes';
+import { DefaultState } from '../reducers/FoodReducer';
+
+const GetFoods = ():ThunkAction<void,
+DefaultState,
 unknown,
-AnyAction> => async (dispatch: Dispatch) => {
+Action> => async (dispatch) => {
   try {
     dispatch({
       type: actionTypes.FOOD_START,
