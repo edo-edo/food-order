@@ -14,12 +14,14 @@ Action> => async (dispatch) => {
       type: actionTypes.FOOD_START,
     });
 
-    const res = await axios.get(`${process.env.API}/food.json`);
+    const response = await axios.get(`${process.env.API}/food.json`);
 
-    dispatch({
-      type: actionTypes.FOOD_SUCCESS,
-      payload: res.data,
-    });
+    if (response) {
+      dispatch({
+        type: actionTypes.FOOD_SUCCESS,
+        payload: response.data,
+      });
+    }
   } catch (e) {
     dispatch({
       type: actionTypes.FOOD_FAIL,
