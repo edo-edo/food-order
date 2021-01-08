@@ -12,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
+    "formik": "^2.2.6",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "yup": "^0.32.8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -31,6 +33,7 @@
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.6",
     "@types/webpack-env": "^1.16.0",
+    "@types/yup": "^0.29.11",
     "@typescript-eslint/eslint-plugin": "^4.9.0",
     "@typescript-eslint/parser": "^4.9.0",
     "babel-loader": "^8.2.2",
